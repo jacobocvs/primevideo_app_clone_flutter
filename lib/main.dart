@@ -1,3 +1,5 @@
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -29,6 +31,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF121923),
       body: DefaultTabController(
         length: 4,
         child: NestedScrollView(
@@ -51,12 +54,36 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ];
           },
-          body: const TabBarView(
-            children: [
-              FlutterLogo(),
-              FlutterLogo(),
-              FlutterLogo(),
-              FlutterLogo()
+          body: ListView(
+            shrinkWrap: true,
+            children: <Widget> [
+              Column(
+                children: <Widget>[
+                  Stack(
+                    children: <Widget>[
+                      Container(
+                        height: 220.0,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/thebatman.jpg',
+                            ),
+                          fit: BoxFit.fill
+                          )
+                        )
+                      ),
+                      Positioned(
+                          child: Row(
+                            children: <Widget>[
+                              DotsIndicator(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                dotsCount: 4,
+                              )
+                        ],
+                      ))
+                    ],
+                  )
+                ],
+              )
             ],
           ),
         ),
