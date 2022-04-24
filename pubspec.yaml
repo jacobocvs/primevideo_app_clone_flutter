@@ -62,6 +62,15 @@ flutter:
   assets:
     - assets/images/thebatman.jpg
     - assets/images/theoffice.jpg
+    - assets/images/eam.jpg
+    - assets/images/w.jpg
+    - assets/images/lj.jpg
+    - assets/images/tb.jpg
+    - assets/images/hov.jpg
+    - assets/images/in.jpg
+    - assets/images/tgd.jpg
+    - assets/images/jbn.jpg
+    - assets/images/jwk.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
