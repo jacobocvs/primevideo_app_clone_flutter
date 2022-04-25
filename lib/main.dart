@@ -1,5 +1,4 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -97,8 +96,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               DotsIndicator(
                                 dotsCount: photos.length,
                                 decorator: const DotsDecorator(
-                                  color: Colors.white,
-                                  activeColor: Colors.blueAccent
+                                  activeColor: Colors.white
                               )
                               )
                             ],
@@ -109,7 +107,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   Column(
                     children: <Widget>[
                       Padding(padding: const EdgeInsets.only(left: 10),
-                      child: Container(
+                      child: SizedBox(
                         height: 180.0,
                         child: Column(
                           children: <Widget>[
@@ -127,14 +125,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             ),
                             Column(
                               children: <Widget>[
-                                Container(
+                                SizedBox(
                                   height: 110.0,
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
                                     itemCount: photos.length,
                                     itemBuilder: (BuildContext context, int index)  {
-                                      return Container(
+                                      return SizedBox(
                                         width: 140.0,
                                         child: Card(
                                           child: Image.asset(photosM[index],
@@ -151,7 +149,101 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       )
                         )
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 10.0),
+                  Column(
+                    children: <Widget>[
+                      Padding(padding: const EdgeInsets.only(left: 10),
+                          child: SizedBox(
+                              height: 180.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: const <Widget>[
+                                      Padding(padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                                        child: Text('Originales de Amazon', style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20.0
+                                        ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      SizedBox(
+                                        height: 110.0,
+                                        child: ListView.builder(
+                                          shrinkWrap: true,
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: photos.length,
+                                          itemBuilder: (BuildContext context, int index)  {
+                                            return SizedBox(
+                                              width: 140.0,
+                                              child: Card(
+                                                child: Image.asset(photosM[index],
+                                                  fit: BoxFit.fill,),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
+                          )
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10.0),
+                  Column(
+                    children: <Widget>[
+                      Padding(padding: const EdgeInsets.only(left: 10),
+                          child: SizedBox(
+                              height: 180.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: const <Widget>[
+                                      Padding(padding: EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
+                                        child: Text('Series populares', style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20.0
+                                        ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: <Widget>[
+                                      SizedBox(
+                                        height: 110.0,
+                                        child: ListView.builder(
+                                          shrinkWrap: true,
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: photos.length,
+                                          itemBuilder: (BuildContext context, int index)  {
+                                            return SizedBox(
+                                              width: 140.0,
+                                              child: Card(
+                                                child: Image.asset(photosM[index],
+                                                  fit: BoxFit.fill,),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
+                          )
+                      )
+                    ],
+                  ),
                 ],
               )
             ],
